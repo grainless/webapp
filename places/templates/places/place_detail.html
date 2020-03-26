@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}{{ place.title }}{% endblock %}
+
+{% block content %}
+  <h1>{{ place.title }}</h1>
+  {% if place.lede %}
+    <h3>{{ place.lede }}</h3>
+  {% endif %}
+  {% if place.description %}
+    <p>{{ place.description }}</p>
+  {% endif %}
+{% endblock %}
