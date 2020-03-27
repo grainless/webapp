@@ -10,4 +10,6 @@
   {% if place.description %}
     <p>{{ place.description }}</p>
   {% endif %}
+
+  <a href="{% url "reviews:list" place.id place.slug %}">Reviews</a>
 {% endblock %}

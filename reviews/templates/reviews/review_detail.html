@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <p>{{ review.lede }}</p>
+  {{ review.body }}
+  <p>Rating: {{ review.rating_label }} {{ review.rating }}</p>
+{% endblock %}

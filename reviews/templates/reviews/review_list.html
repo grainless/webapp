@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Reviews{% endblock %}
+
+{% block content %}
+  {% for review in object_list %}
+    {% if review.lede %}
+      <h3>{{ review.lede }}</h3>
+    {% endif %}
+    <p>{{ review.body }}</p>
+    <p>Rating: {{ review.rating }}</p>
+    <p>Posted on {{ review.pub_date }} by {{ review.author }}</p>
+  {% endfor %}
+
+{% endblock %}

@@ -4,7 +4,7 @@
 
 {% block content %}
   {% for place in object_list %}
-    <a href="{% url "places:detail" place.slug %}">
+    <a href="{% url "places:detail" place.id place.slug %}">
       <h1>{{ place.title }}</h1>
       <p>{{ place.lede }}</p>
     </a>

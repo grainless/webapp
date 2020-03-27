@@ -15,6 +15,7 @@ ALLOWED_HOSTS = []
 # Application definition
 INSTALLED_APPS = [
     "places.apps.PlacesConfig",
+    "reviews.apps.ReviewsConfig",
     "django.contrib.gis",
     "django.contrib.admin",
     "django.contrib.auth",
