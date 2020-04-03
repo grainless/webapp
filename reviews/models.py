@@ -18,7 +18,3 @@ class Review(models.Model):
 
     def __str__(self):
         return f"{self.place.title} by {self.author}"
-
-    class Meta:
-        db_table = "places_review"
-        app_label = "reviews"
