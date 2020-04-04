@@ -23,3 +23,12 @@ class Chain(Entity):
 class Place(Entity):
     chain = models.ForeignKey(Chain, blank=True, null=True, on_delete=models.CASCADE)
     location = models.PointField()
+    features = models.ManyToManyField("Feature")
+
+
+class Feature(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField(blank=True, max_length=500)
+
+    def __str__(self):
+        return self.title

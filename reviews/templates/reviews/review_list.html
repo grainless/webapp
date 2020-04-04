@@ -7,7 +7,7 @@
     {% for review in reviews %}
       <article class="review">
         {% if review.lede %}<h3>{{ review.lede }}</h3>{% endif %}
-        {{ review.body }}
+        {{ review.body|linebreaks }}
         <p>Review posted by {{ review.author }} on {{ review.pub_date }}</p>
       </article>
     {% endfor %}

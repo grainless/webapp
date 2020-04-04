@@ -8,7 +8,16 @@
     <h3>{{ place.lede }}</h3>
   {% endif %}
   {% if place.description %}
-    <p>{{ place.description }}</p>
+    {{ place.description|linebreaks }}
+  {% endif %}
+
+  {% if place.features %}
+    {% for feature in place.features.all %}
+      <div class="feature">
+        <h4>{{ feature.title }}</h4>
+        {{ feature.description }}
+      </div>
+    {% endfor %}
   {% endif %}
 
   <a href="{% url "reviews:list" place.id place.slug %}">Reviews</a>

@@ -2,6 +2,6 @@
 
 {% block content %}
   <p>{{ review.lede }}</p>
-  {{ review.body }}
+  {{ review.body|linebreaks }}
   <p>Rating: {{ review.rating_label }} {{ review.rating }}</p>
 {% endblock %}
