@@ -3,6 +3,10 @@
 {% block title %}{{ place.title }} Reviews{% endblock %}
 
 {% block content %}
+  {% if user.is_authenticated %}
+    <h2><a href="{% url "reviews:create" place.pk place.slug %}">Create new review</a></h3>
+  {% endif %}
+
   {% if reviews %}
     {% for review in reviews %}
       <article class="review">

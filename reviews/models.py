@@ -14,7 +14,10 @@ class Review(models.Model):
         blank=True, max_length=100, help_text="A short summary of your review"
     )
     body = models.TextField(max_length=500)
-    rating = models.IntegerField(choices=RATINGS, default=1)
+    rating = models.IntegerField(choices=RATINGS)
 
     def __str__(self):
         return f"{self.place.title} by {self.author}"
+
+    def get_absolute_url(self):
+        return reverse("detail", kwargs={"pk": self.pk})
